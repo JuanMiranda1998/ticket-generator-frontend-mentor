@@ -1,0 +1,90 @@
+:root{
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-300: hsl(252, 6%, 83%);
+  --neutral-500: hsl(245, 15%, 58%);
+  --neutral-700: hsl(245, 19%, 35%);
+  --neutral-800: hsl(248, 70%, 10%);
+  --orange-500: hsl(7, 88%, 67%);
+  --orange-700: hsl(7, 71%, 60%);
+  --gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url(./assets/fonts/static/Inconsolata-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url(./assets/fonts/static/Inconsolata-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url(./assets/fonts/static/Inconsolata-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url(./assets/fonts/static/Inconsolata-ExtraBold.ttf);
+  font-weight: 800;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Inconsolata';
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+a, button {
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  font: inherit;
+  line-height: 1.1;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
