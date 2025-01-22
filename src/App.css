@@ -5,10 +5,11 @@
   flex-direction: column;
   align-items: center;
   background:
-  no-repeat top/300% url(/pattern-lines.svg),
+  top/300% url(/pattern-lines.svg),
   left bottom/200px url(/pattern-squiggly-line-bottom.svg),
   right 30px/120px url(/pattern-squiggly-line-top.svg),
-  no-repeat center top/cover url(/background-mobile.png);
+  125% 80%/35% url(/pattern-circle.svg),
+  center center/cover url(/background-mobile.png);
   background-repeat: no-repeat;
   color: var(--neutral-0);
 }
@@ -16,9 +17,10 @@
 @media (min-width: 675px) {
   .container{
     background:
-        no-repeat top/300% url(/pattern-lines.svg),
+        no-repeat top/150% url(/pattern-lines.svg),
         left bottom/200px url(/pattern-squiggly-line-bottom.svg),
         right 30px/120px url(/pattern-squiggly-line-top.svg),
+        90% 70%/12% url(/pattern-circle.svg),
         no-repeat center top/cover url(/background-tablet.png);
       background-repeat: no-repeat;
     }
@@ -45,7 +47,13 @@
 }
 
 .logo img {
-  width: 175px;
+  width: 150px;
+}
+
+@media (min-width: 675px) {
+  .logo img {
+    width: 175px;
+  }
 }
 
 .title {

@@ -62,7 +62,7 @@ function App() {
     if ( !data.githubUsername) {
       setGithubError('Please enter your github username.');
     }
-    if ( data.fullName && data.email && data.githubUsername && verifiedEmail){
+    if ( data.avatar && data.fullName && data.email && data.githubUsername && verifiedEmail){
       setFormSent(true);
       return true;
     } 
@@ -169,7 +169,16 @@ const removeImage = () => {
 }
 
 
-  if (formSent) return <Confirmation data={formData} />;
+  if (formSent) return (
+    <div className='container'>
+      <div className='logo'><img src="/logo-full.svg" alt="" /></div>
+      <Confirmation data={formData} />
+      <div className="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+        Coded by <a href="#">Juan Miranda</a>.
+      </div>
+    </div>
+  )
 
   return (
     <div className='container'>

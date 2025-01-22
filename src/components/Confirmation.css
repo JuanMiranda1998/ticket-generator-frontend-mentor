@@ -1,0 +1,50 @@
+.confirmationContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.confirmationTitle{
+  margin: 1rem 0 1.5rem;
+  text-align: center;
+  font-size: 2.125rem;
+  font-weight: 800;
+}
+.gradientName {
+  text-transform: capitalize;
+  background: linear-gradient(to right, var(--orange-500), var(--neutral-0));
+  color: transparent;
+  background-clip: text;
+}
+.confirmationMessage {
+  max-width: 300px;
+  font-size: 1.125rem;
+  color: var(--neutral-300);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.confirmationEmail {
+  color: var(--orange-500);
+}
+.ticketDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  
+}
+.ticketDetailsHeading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.ticketDetailsHeading img {
+  width: 25px;
+  height: 25px;
+}
+.ticketDetailsHeading h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}

@@ -6,13 +6,30 @@ const Confirmation = (data) => {
 
 
   return (
-    <div>
-      Congrats, {data.data.fullName}! Your ticket is ready.
+    <div className='confirmationContainer'>
+      <h1 className='confirmationTitle'>Congrats, <span className='gradientName'>{data.data.fullName}</span>! Your ticket is ready.</h1>
 
-      We{"'"}ve emailed your ticket to {data.data.email} and will send updates in the run up to the event.
+      <p className='confirmationMessage'>We{"'"}ve emailed your ticket to <span className='confirmationEmail'>{data.data.email}</span> and will send updates in the run up to the event.</p>
 
-      Coding Conf
-      Jan 31, 2025 / Austin, TX
+      <div className='ticketContainer'>
+        <div className='ticketDetails'>
+          <div className='ticketDetailsHeading'>
+            <img src="/logo-mark.svg" alt="" />
+            <h2>Coding Conf</h2>
+          </div>
+          <p className='ticketDate'>Jan 31, 2025 / Austin, TX</p>
+        </div>
+        <div>
+          <div>
+            <img src={data.data.avatar} alt="" />
+          </div>
+          <h2>{data.data.fullName}</h2>
+          <div>
+            <img src="/icon-gihub.svg" alt="" />
+            <p>{data.data.githubUsername}</p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
