@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10rem;
 }
 .confirmationTitle{
   margin: 1rem 0 1.5rem;
@@ -26,12 +27,25 @@
 .confirmationEmail {
   color: var(--orange-500);
 }
+/* Ticket */
+.ticketContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 300px;
+  height: 150px;
+  padding: 1rem;
+  background-image: url(/pattern-ticket.svg);
+  background-size: 100% 100%;
+  background-clip: border-box;
+  background-position: center;
+}
 .ticketDetails {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  
 }
 .ticketDetailsHeading {
   display: flex;
@@ -45,6 +59,21 @@
   height: 25px;
 }
 .ticketDetailsHeading h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
+}
+
+@media (min-width: 657px) {
+  .ticketContainer {
+    width: 350px;
+    height: 170px;
+  }
+  .ticketDetailsHeading h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.userAvatar img {
+  width: 40px;
+  height: 40px;
 }

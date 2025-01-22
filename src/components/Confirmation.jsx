@@ -19,14 +19,16 @@ const Confirmation = (data) => {
           </div>
           <p className='ticketDate'>Jan 31, 2025 / Austin, TX</p>
         </div>
-        <div>
-          <div>
+        <div className='ticketUserData'>
+          <div className='userAvatar'>
             <img src={data.data.avatar} alt="" />
           </div>
-          <h2>{data.data.fullName}</h2>
-          <div>
-            <img src="/icon-gihub.svg" alt="" />
-            <p>{data.data.githubUsername}</p>
+          <div className='ticketUserHeading'>
+            <h2 className='userFullName'>{data.data.fullName}</h2>
+            <div>
+              <img src="/icon-gihub.svg" alt="" />
+              <p>{data.data.githubUsername}</p>
+            </div>
           </div>
         </div>
       </div>

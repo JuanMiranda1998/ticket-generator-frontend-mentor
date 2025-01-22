@@ -20,8 +20,11 @@
         no-repeat top/150% url(/pattern-lines.svg),
         left bottom/200px url(/pattern-squiggly-line-bottom.svg),
         right 30px/120px url(/pattern-squiggly-line-top.svg),
-        90% 70%/12% url(/pattern-circle.svg),
-        no-repeat center top/cover url(/background-tablet.png);
+        /* center circle */
+        78% 75%/12% url(/pattern-circle.svg),
+        /* Top circle */
+        10px -10%/14% url(/pattern-circle.svg),
+        no-repeat center center/cover url(/background-tablet.png);
       background-repeat: no-repeat;
     }
     }
@@ -32,7 +35,10 @@
           no-repeat top/100% url(/pattern-lines.svg),
           left 120%/60% url(/pattern-squiggly-line-bottom.svg),
           right 60px/25% url(/pattern-squiggly-line-top.svg),
+          /* center circle */
           75% 62%/12% url(/pattern-circle.svg),
+           /* Top circle */
+          10px -10%/14% url(/pattern-circle.svg),
           no-repeat center top/cover url(/background-desktop.png);
         background-repeat: no-repeat;
   }
