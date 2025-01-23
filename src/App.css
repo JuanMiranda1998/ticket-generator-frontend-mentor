@@ -18,8 +18,8 @@
   .container{
     background:
         no-repeat top/150% url(/pattern-lines.svg),
-        left bottom/200px url(/pattern-squiggly-line-bottom.svg),
-        right 30px/120px url(/pattern-squiggly-line-top.svg),
+        left bottom/40% url(/pattern-squiggly-line-bottom.svg),
+        right 30px/20% url(/pattern-squiggly-line-top.svg),
         /* center circle */
         78% 75%/12% url(/pattern-circle.svg),
         /* Top circle */

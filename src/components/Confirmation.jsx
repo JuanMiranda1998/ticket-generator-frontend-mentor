@@ -7,11 +7,12 @@ const Confirmation = (data) => {
 
   return (
     <div className='confirmationContainer'>
-      <h1 className='confirmationTitle'>Congrats, <span className='gradientName'>{data.data.fullName}</span>! Your ticket is ready.</h1>
+      <h1 className='confirmationTitle'>Congrats, <span className='gradientName'>{data.data.fullName}</span>!<br/> Your ticket is ready.</h1>
 
       <p className='confirmationMessage'>We{"'"}ve emailed your ticket to <span className='confirmationEmail'>{data.data.email}</span> and will send updates in the run up to the event.</p>
 
       <div className='ticketContainer'>
+          <div className='ticketNum'>#01609</div>
           <div className='ticketDetailsHeading'>
             <img src="/logo-mark.svg" alt="" />
             <div className='ticketDetails'>
