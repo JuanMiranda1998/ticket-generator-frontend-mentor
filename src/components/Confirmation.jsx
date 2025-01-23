@@ -14,7 +14,7 @@ const Confirmation = (data) => {
       <div className='ticketContainer'>
           <div className='ticketNum'>#01609</div>
           <div className='ticketDetailsHeading'>
-            <img src="/logo-mark.svg" alt="" />
+            <img src="/logo-mark.svg" />
             <div className='ticketDetails'>
               <h2 className='ticketTitle'>Coding Conf</h2>
               <p className='ticketDate'>Jan 31, 2025 / Austin, TX</p>
@@ -22,12 +22,12 @@ const Confirmation = (data) => {
           </div>
         <div className='ticketUserData'>
           <div className='userAvatar'>
-            <img src={data.data.avatar} alt="" />
+            <img src={data.data.avatar} />
           </div>
           <div className='ticketUserHeading'>
             <h2 className='userFullName'>{data.data.fullName}</h2>
             <div className='githubDataContainer'>
-              <img className='githubIcon' src="/icon-github.svg" alt="" />
+              <img className='githubIcon' src="/icon-github.svg" />
               <p className='userGithubAccount'>{data.data.githubUsername}</p>
             </div>
           </div>

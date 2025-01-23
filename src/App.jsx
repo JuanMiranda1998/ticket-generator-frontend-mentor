@@ -12,6 +12,12 @@ function App() {
   const [githubError, setGithubError] = useState()
 
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      fileInputClick(e);
+    }
+  }
+
   const handleInput = (e) => {
     setFormData( {...formData, [e.target.id]: e.target.value} )
     switch (e.target.id) {
@@ -160,7 +166,7 @@ const removeImage = () => {
 
   if (formSent) return (
     <div className='container'>
-      <div className='logo'><img src="/logo-full.svg" alt="" /></div>
+      <div className='logo'><img src="/logo-full.svg" /></div>
       <Confirmation data={formData} />
       <div className="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
@@ -171,7 +177,7 @@ const removeImage = () => {
 
   return (
     <div className='container'>
-      <div className='logo'><img src="/logo-full.svg" alt="" /></div>
+      <div className='logo'><img src="/logo-full.svg" /></div>
       <h1 className='title'>Your Journey to Coding Conf  2025 Starts Here!</h1>
       <p className='titleDesc'>Secure your spot at next year{"'"}s biggest coding conference.</p>
 
@@ -181,40 +187,40 @@ const removeImage = () => {
       }}>
         <div className='fieldContainer'>
           <label htmlFor="avatar">Upload Avatar</label>
-          <div className='line1'>
-            <div className="line2">
-              <div className='line3'>
-                <div
-                  name="avatar"
-                  id="avatar"
-                  className='avatarInputZone'
-                  onDrop={(e) => dropHandler(e)}
-                  onDragOver={(e) => dragOverHandler(e)}
-                  onDragLeave={(e) => e.target.style.background = 'hsla(245, 19%, 35%, 30%)'}
-                  onClick={(e) => {fileInputClick(e)}}>
-                  <div className='uploadIconContainer' id='uploadIcon'>
-                    <img src='/icon-upload.svg' id='avatarImage' /> 
-                  </div>
-                  <input
-                    className='avatarInput' 
-                    type="file" 
-                    accept="image/png, image/jpeg"
-                    name="avatarFile" 
-                    id="avatarInput"
-                    onChange={(e) => fileUploadHandler(e)} />
-                    {formData.avatar ? 
-                    <div className='avatarButtonContainer'>
-                      <button type='button' className='avatarButton' onClick={() => {removeImage()}}>Remove image</button>
-                      <button type='button' id='changeImageBtn' className='avatarButton'>Change image</button>
-                    </div>
-                    : 
-                    <p className='avatarInputText'>Drag and drop or click to upload</p>}
-                </div>
-              </div>
+          <div
+            name="avatar"
+            id="avatar"
+            className='avatarInputZone'
+            tabIndex={0}
+            onDrop={(e) => dropHandler(e)}
+            onDragOver={(e) => dragOverHandler(e)}
+            onDragLeave={(e) => e.target.style.background = 'hsla(245, 19%, 35%, 30%)'}
+            onClick={(e) => { fileInputClick(e) }}
+            onKeyDown={(e) => { handleKeyDown(e)}}
+            >
+            <div className='line1'></div>
+            <div className="line2"></div>
+            <div className='line3'></div>
+            <div className='uploadIconContainer' id='uploadIcon'>
+              <img src='/icon-upload.svg' id='avatarImage' />
             </div>
+            <input
+              className='avatarInput'
+              type="file"
+              accept="image/png, image/jpeg"
+              name="avatarFile"
+              id="avatarInput"
+              onChange={(e) => fileUploadHandler(e)} />
+            {formData.avatar ?
+              <div className='avatarButtonContainer'>
+                <button type='button' className='avatarButton' onClick={() => { removeImage() }}>Remove image</button>
+                <button type='button' id='changeImageBtn' className='avatarButton'>Change image</button>
+              </div>
+              :
+              <p className='avatarInputText'>Drag and drop or click to upload</p>}
           </div>
           <div className='avatarDescription'>
-            <img src="/icon-info.svg" alt="" />
+            <img src="/icon-info.svg" />
             <p className={`avatarDescriptionText ${imageError ? 'errorMessage' : ''}`}>
               {imageError ? imageError : 'Upload your photo (JPG or PNG, max size: 500KB).'}
             </p>
@@ -222,17 +228,17 @@ const removeImage = () => {
         </div>
         <div className='fieldContainer'>
           <label htmlFor="fullName">Full Name</label>
-          <input onChange={handleInput} type="text" name="fullName" id="fullName" />
+          <input className={`formInput ${ nameError ? 'inputError' : ''}`} onChange={handleInput} type="text" name="fullName" id="fullName" />
           { nameError ? <div className='errorMessage'>{nameError}</div> : null }
         </div>
         <div className='fieldContainer'>
           <label htmlFor="email">Email Address</label>
-          <input onChange={handleInput} type="text" placeholder='example@email.com' name="email" id="email" />
+          <input className={`formInput ${ emailError ? 'inputError' : ''}`} onChange={handleInput} type="text" placeholder='example@email.com' name="email" id="email" />
           { emailError ? <div className='errorMessage'>{emailError}</div> : null }
         </div>
         <div className='fieldContainer'>
           <label htmlFor="githubUsername">GitHub Username</label>
-          <input onChange={handleInput} type="text" placeholder='@yourusername' name="githubUsername" id="githubUsername" />
+          <input className={`formInput ${ githubError ? 'inputError' : ''}`} onChange={handleInput} type="text" placeholder='@yourusername' name="githubUsername" id="githubUsername" />
           { githubError ? <div className='errorMessage'>{githubError}</div> : null }
         </div>
         <button className='submitButton' type='submit'>Generate My Ticket</button>

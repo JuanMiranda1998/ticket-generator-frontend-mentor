@@ -109,7 +109,7 @@
 }
 
 
-.fieldContainer input {
+.formInput {
   cursor: pointer;
   border: solid 1px var(--neutral-300);
   border-radius: 10px;
@@ -120,30 +120,48 @@
   transition: all ease-in 150ms;
 }
 
-.fieldContainer input::placeholder {
+.formInput::placeholder {
   color: var(--neutral-300);
 }
 
-.fieldContainer input:hover {
+.formInput:hover {
   background: hsla(245, 19%, 35%, 80%);
 }
 
+.formInput:focus {
+  outline: solid 2px var(--neutral-300);
+  outline-offset: 5px;
+  margin-bottom: .5rem;
+}
+
+.formInput.inputError {
+  border: 1px solid var(--orange-500);
+}
+
 .avatarInputZone {
+  width: 100%;
+  min-height: 100px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   padding: 2rem 0;
-  width: 100%;
-  min-height: 100px;
+  border-radius: 1rem;
   cursor: pointer;
   background: hsla(245, 19%, 35%, 30%);
   transition: all ease-in 150ms;
+  overflow: hidden;
 }
 
 .avatarInputZone:hover {
   background: hsla(245, 19%, 35%, 80%);
+}
+
+.avatarInputZone:focus {
+  outline: solid 2px var(--neutral-300);
+  outline-offset: 5px;
+  margin-bottom: .5rem;
 }
 
 .avatarInput {
@@ -153,18 +171,27 @@
 .line1 {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   background:
   radial-gradient(ellipse closest-side, #0000 82%, var(--neutral-300) 82%);
-  background-size: 159% 169%;
+  background-size: 160% 170%;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 1rem;
   overflow: hidden;
 }
 
 .line2 {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   background:
   repeating-linear-gradient(90deg,var(--neutral-300) 0 15px ,#0000 0 20px) top,
   repeating-linear-gradient(90deg,var(--neutral-300) 0 15px,#0000 0 20px) bottom;
@@ -175,6 +202,11 @@
 .line3 {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   background:
   repeating-linear-gradient(0deg,var(--neutral-300) 0 15px ,#0000 0 20px) left,
   repeating-linear-gradient(0deg,var(--neutral-300) 0 15px,#0000 0 20px) right;
@@ -263,7 +295,7 @@
   width: 100%;
   margin: 20px auto;
   padding: 7px 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 700;
   color: var(--neutral-800);
   background-color: var(--orange-500);
@@ -272,6 +304,10 @@
 
 .submitButton:hover {
   background-color: var(--orange-700);
+}
+
+.submitButton:focus {
+  outline:auto;
 }
 
 .errorMessage {
