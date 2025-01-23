@@ -43,7 +43,6 @@ function App() {
   
   const handleForm = (data) => {
     let verifiedEmail;
-    console.log(data)
     if ( !data.avatar) {
       setImageError('Please upload an avatar.');
     }
@@ -73,15 +72,9 @@ function App() {
 
   const dropHandler = (ev) => {
     ev.preventDefault();
-
-    console.log(ev.target.children.avatarInput);
-
     if (ev.dataTransfer.items) {
-
       [...ev.dataTransfer.items].forEach((item) => {
-
         if (item.kind === "file") {
-
           const file = item.getAsFile();
           if (file.type === 'image/jpeg' || file.type === 'image/png' ){
             if (file.size > 500000) {
@@ -102,13 +95,11 @@ function App() {
   }
 
   const dragOverHandler = (ev) => {
-    console.log("File(s) in drop zone");
     ev.preventDefault();
     ev.target.style.background = 'hsla(245, 19%, 35%, 80%)';
   }
 
   const fileInputClick = (e) => {
-    console.log(e)
     const fileInput = document.querySelector('#avatarInput');
     if (e.target.id == 'avatar' || e.target.id == 'changeImageBtn' || e.target.id == 'uploadIcon' || e.target.id == 'avatarImage'){
       fileInput.click();
@@ -116,7 +107,6 @@ function App() {
   }
 
   const fileUploadHandler = (e) => {
-    console.log(e);
     if (e.target.files && e.target.files[0]){
       const file = e.target.files[0]
       if (file.type === 'image/jpeg' || file.type === 'image/png' ){
@@ -136,29 +126,28 @@ function App() {
 
   
  function displayPicture(input) {
-  console.log(input)
   var reader = new FileReader();
   if (input.target.files && input.target.files[0]) {
   reader.onload = function (e) {
-    console.log(e);
+    ;
     document.querySelector('#avatarImage').setAttribute('src', e.target.result);
     document.querySelector('#avatarImage').style = 'width:100px;height:100px;';
     document.querySelector('.uploadIconContainer').style.padding = '0';
     document.querySelector('#avatar').style.background = 'hsla(245, 19%, 35%, 30%)';
   };
   reader.readAsDataURL(input.target.files[0]);
-} else {
-  if (input.dataTransfer.files) {
-    reader.onload = function (e) {
-      document.querySelector('#avatarImage').setAttribute('src', e.target.result);
-      document.querySelector('#avatarImage').style = 'width:100px;height:100px;';
-      document.querySelector('.uploadIconContainer').style.padding = '0';
-      document.querySelector('#avatar').style.background = 'hsla(245, 19%, 35%, 30%)';
-    };
-    
-    reader.readAsDataURL(input.dataTransfer.files[0]);
-  }}
-}
+  } else {
+    if (input.dataTransfer.files) {
+      reader.onload = function (e) {
+        document.querySelector('#avatarImage').setAttribute('src', e.target.result);
+        document.querySelector('#avatarImage').style = 'width:100px;height:100px;';
+        document.querySelector('.uploadIconContainer').style.padding = '0';
+        document.querySelector('#avatar').style.background = 'hsla(245, 19%, 35%, 30%)';
+      };
+      
+      reader.readAsDataURL(input.dataTransfer.files[0]);
+    }}
+  }
 
 const removeImage = () => {
   setFormData({...formData, avatar: ''})
