@@ -86,7 +86,7 @@ function App() {
               setImageError('File too large. Please upload a photo under 500KB.');
             } 
             else {
-              setFormData( {...formData, avatar: `/${file.name}`}) 
+              setFormData( {...formData, avatar: file}) 
               displayPicture(ev)
               setImageError('');
             }
@@ -116,9 +116,8 @@ function App() {
       if (file.type === 'image/jpeg' || file.type === 'image/png' ){
         if (file.size > 500000){
           setImageError('File too large. Please upload a photo under 500KB.');
-          
         } else {
-          setFormData( {...formData, avatar: `/${e.target.files[0].name}`}) 
+          setFormData( {...formData, avatar: e.target.files[0]}) 
           displayPicture(e);
           setImageError('');
         }

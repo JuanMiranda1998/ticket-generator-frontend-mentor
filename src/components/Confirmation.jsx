@@ -1,9 +1,15 @@
+import { useEffect } from 'react';
 import './Confirmation.css'
 
 const Confirmation = (data) => {
 
-  console.log(data.data)
-
+  useEffect( () => {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      document.querySelector('#ticketImage').setAttribute('src', e.target.result);
+    } 
+    reader.readAsDataURL(data.data.avatar)
+  } ,[data.data.avatar] )
 
   return (
     <div className='confirmationContainer'>
@@ -22,7 +28,7 @@ const Confirmation = (data) => {
           </div>
         <div className='ticketUserData'>
           <div className='userAvatar'>
-            <img src={data.data.avatar} />
+            <img id='ticketImage' src='/image-avatar.jpg' />
           </div>
           <div className='ticketUserHeading'>
             <h2 className='userFullName'>{data.data.fullName}</h2>
