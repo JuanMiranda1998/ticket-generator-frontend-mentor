@@ -11,7 +11,6 @@ function App() {
   const [emailError, setEmailError] = useState()
   const [githubError, setGithubError] = useState()
 
-
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       fileInputClick(e);
@@ -93,8 +92,7 @@ function App() {
             }
           } else {
             setImageError('Please enter a valid image (JPG or PNG under 500KB.)')
-          }
-          
+          }   
         }
       });
     } 
@@ -163,7 +161,6 @@ const removeImage = () => {
   document.getElementById('avatarInput').value = null;
 }
 
-
   if (formSent) return (
     <div className='container'>
       <div className='logo'><img src="/logo-full.svg" /></div>
@@ -180,7 +177,6 @@ const removeImage = () => {
       <div className='logo'><img src="/logo-full.svg" /></div>
       <h1 className='title'>Your Journey to Coding Conf  2025 Starts Here!</h1>
       <p className='titleDesc'>Secure your spot at next year{"'"}s biggest coding conference.</p>
-
       <form className='formElement' onSubmit={(e) => {
         e.preventDefault();
         handleForm(formData);
@@ -248,7 +244,6 @@ const removeImage = () => {
         Coded by <a href="#">Juan Miranda</a>.
       </div>
     </div>
-    
   )
 }
 

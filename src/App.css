@@ -176,6 +176,7 @@
   left: 0;
   bottom: 0;
   right: 0;
+  pointer-events: none;
   background:
   radial-gradient(ellipse closest-side, #0000 82%, var(--neutral-300) 82%);
   background-size: 160% 170%;
@@ -192,6 +193,7 @@
   left: 0;
   bottom: 0;
   right: 0;
+  pointer-events: none;
   background:
   repeating-linear-gradient(90deg,var(--neutral-300) 0 15px ,#0000 0 20px) top,
   repeating-linear-gradient(90deg,var(--neutral-300) 0 15px,#0000 0 20px) bottom;
@@ -207,6 +209,7 @@
   left: 0;
   bottom: 0;
   right: 0;
+  pointer-events: none;
   background:
   repeating-linear-gradient(0deg,var(--neutral-300) 0 15px ,#0000 0 20px) left,
   repeating-linear-gradient(0deg,var(--neutral-300) 0 15px,#0000 0 20px) right;
@@ -240,6 +243,7 @@
   border-radius: 10px;
   aspect-ratio: 1;
   background-color: #322e50;
+  margin-bottom: 1rem;
 }
 .uploadIconContainer img {
   width: 40px;

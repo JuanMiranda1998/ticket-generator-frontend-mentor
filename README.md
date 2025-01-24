@@ -13,7 +13,6 @@ This is a solution to the [Conference ticket generator challenge on Frontend Men
 - [Author](#author)
 
 
-
 ## Overview
 
 ### The challenge
@@ -39,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/JuanMiranda1998/ticket-generator-frontend-mentor)
-- Live Site URL: [Netlify](https://netlify.com)
+- Live Site URL: [Netlify](https://contact-form-juanmiranda.netlify.app/)
 
 ## My process
 
