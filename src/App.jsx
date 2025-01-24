@@ -173,7 +173,7 @@ const removeImage = () => {
 
   return (
     <div className='container'>
-      <div className='logo'><img src="/logo-full.svg" /></div>
+      <div className='logo'><img src="/logo-full.svg" alt='coding conf logo'/></div>
       <h1 className='title'>Your Journey to Coding Conf  2025 Starts Here!</h1>
       <p className='titleDesc'>Secure your spot at next year{"'"}s biggest coding conference.</p>
       <form className='formElement' onSubmit={(e) => {
