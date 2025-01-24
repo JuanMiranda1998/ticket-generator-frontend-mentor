@@ -205,6 +205,8 @@ const removeImage = () => {
               accept="image/png, image/jpeg"
               name="avatarFile"
               id="avatarInput"
+              aria-invalid={ imageError != '' } 
+              aria-describedby="avatarHint"
               onChange={(e) => fileUploadHandler(e)} />
             {formData.avatar ?
               <div className='avatarButtonContainer'>
@@ -216,25 +218,25 @@ const removeImage = () => {
           </div>
           <div className='avatarDescription'>
             <img src="/icon-info.svg" />
-            <p className={`avatarDescriptionText ${imageError ? 'errorMessage' : ''}`}>
+            <p className={`avatarDescriptionText ${imageError ? 'errorMessage' : ''}`} id="avatarHint">
               {imageError ? imageError : 'Upload your photo (JPG or PNG, max size: 500KB).'}
             </p>
           </div>
         </div>
         <div className='fieldContainer'>
           <label htmlFor="fullName">Full Name</label>
-          <input className={`formInput ${ nameError ? 'inputError' : ''}`} onChange={handleInput} type="text" name="fullName" id="fullName" />
-          { nameError ? <div className='errorMessage'>{nameError}</div> : null }
+          <input className={`formInput ${ nameError ? 'inputError' : ''}`} aria-invalid={ nameError != '' } aria-describedby="nameHint" onChange={handleInput} type="text" name="fullName" id="fullName" />
+          { nameError ? <p className='errorMessage' id="nameHint">{nameError}</p> : null }
         </div>
         <div className='fieldContainer'>
           <label htmlFor="email">Email Address</label>
-          <input className={`formInput ${ emailError ? 'inputError' : ''}`} onChange={handleInput} type="text" placeholder='example@email.com' name="email" id="email" />
-          { emailError ? <div className='errorMessage'>{emailError}</div> : null }
+          <input className={`formInput ${ emailError ? 'inputError' : ''}`} aria-invalid={ emailError != '' } aria-describedby="emailHint" onChange={handleInput} type="text" placeholder='example@email.com' name="email" id="email" />
+          { emailError ? <p className='errorMessage' id="emailHint">{emailError}</p> : null }
         </div>
         <div className='fieldContainer'>
           <label htmlFor="githubUsername">GitHub Username</label>
-          <input className={`formInput ${ githubError ? 'inputError' : ''}`} onChange={handleInput} type="text" placeholder='@yourusername' name="githubUsername" id="githubUsername" />
-          { githubError ? <div className='errorMessage'>{githubError}</div> : null }
+          <input className={`formInput ${ githubError ? 'inputError' : ''}`} aria-invalid={ githubError != '' } aria-describedby="githubHint" onChange={handleInput} type="text" placeholder='@yourusername' name="githubUsername" id="githubUsername" />
+          { githubError ? <p className='errorMessage' id="githubHint">{githubError}</p> : null }
         </div>
         <button className='submitButton' type='submit'>Generate My Ticket</button>
       </form>
