@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/JuanMiranda1998/ticket-generator-frontend-mentor)
-- Live Site URL: [Netlify](https://contact-form-juanmiranda.netlify.app/)
+- Live Site URL: [Netlify](https://ticket-generator-juanmiranda.netlify.app/)
 
 ## My process
 
